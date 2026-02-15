@@ -3,3 +3,4 @@ resources:
   - external-dns.yaml
   - cluster-issuers.yaml
   - cnpg-operator.yaml
+  - traefik.yaml
