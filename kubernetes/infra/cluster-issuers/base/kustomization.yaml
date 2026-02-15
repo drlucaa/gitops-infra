@@ -1,0 +1,2 @@
+resources:
+  - letsencrypt-production.yaml
