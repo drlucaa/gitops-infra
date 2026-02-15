@@ -7,11 +7,7 @@ spec:
   interval: 10m0s
   path: ./kubernetes/infra/cert-manager/overlays/apollo
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: cert-manager-webhook
-      namespace: cert-manager

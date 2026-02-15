@@ -7,8 +7,8 @@ spec:
   interval: 10m0s
   path: ./kubernetes/clusters/apollo/infra
   prune: true
+  wait: true
+  timeout: 20m
   sourceRef:
     kind: GitRepository
     name: flux-system
-  wait: true
-  timeout: 20m
