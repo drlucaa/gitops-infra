@@ -36,15 +36,9 @@ spec:
             name: zitadel-db-superuser
             key: password
       - name: ZITADEL_DATABASE_POSTGRES_HOST
-        valueFrom:
-          secretKeyRef:
-            name: zitadel-db-app
-            key: host
+        value: zitadel-db-pooler-rw
       - name: ZITADEL_DATABASE_POSTGRES_PORT
-        valueFrom:
-          secretKeyRef:
-            name: zitadel-db-app
-            key: port
+        value: "5432"
       - name: ZITADEL_DATABASE_POSTGRES_DATABASE
         valueFrom:
           secretKeyRef:
