@@ -18,6 +18,10 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
+    deployment:
+      enabled: true
+      replicas: 3
+
     ingressClass:
       enabled: true
       isDefaultClass: true
