@@ -1,4 +1,2 @@
 resources:
   - ../../base
-  - secret-1password.yaml
-  - cluster-secret-store.yaml
