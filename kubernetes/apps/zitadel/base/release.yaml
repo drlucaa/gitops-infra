@@ -20,6 +20,7 @@ spec:
     remediation:
       retries: 3
   values:
+    replicaCount: 3
     zitadel:
       masterkeySecretName: "zitadel-masterkey"
       configmapConfig:
@@ -72,14 +73,9 @@ spec:
           paths:
             - path: /
               pathType: Prefix
-        - host: "home.auth.trai.ch"
-          paths:
-            - path: /
-              pathType: Prefix
       tls:
         - hosts:
             - "auth.trai.ch"
-            - "home.auth.trai.ch"
           secretName: zitadel-tls
 
     login:
@@ -95,12 +91,7 @@ spec:
             paths:
               - path: /ui/v2/login
                 pathType: Prefix
-          - host: "home.auth.trai.ch"
-            paths:
-              - path: /ui/v2/login
-                pathType: Prefix
         tls:
           - hosts:
               - "auth.trai.ch"
-              - "home.auth.trai.ch"
             secretName: zitadel-tls
