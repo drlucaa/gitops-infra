@@ -39,8 +39,9 @@ spec:
               scheme: https
               permanent: true
       websecure:
-        tls:
-          enabled: true
+        http:
+          tls:
+            enabled: true
 
     service:
       enabled: true
