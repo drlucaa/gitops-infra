@@ -2,6 +2,7 @@ resources:
   - namespace.yaml
   - cnpg-cluster.yaml
   - cnpg-backup.yaml
+  - cnpg-pooler.yaml
   - repository.yaml
   - secret-masterkey.yaml
   - release.yaml
