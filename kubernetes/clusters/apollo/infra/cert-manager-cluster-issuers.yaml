@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./kubernetes/infra/cluster-issuers/overlays/apollo
+  path: ./kubernetes/infra/cluster-issuers/apollo
   prune: true
   wait: true
   sourceRef:
