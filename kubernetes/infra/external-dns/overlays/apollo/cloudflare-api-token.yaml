@@ -2,7 +2,7 @@ apiVersion: external-secrets.io/v1
 kind: ExternalSecret
 metadata:
   name: cloudflare-api-token
-  namespace: cert-manager
+  namespace: external-dns
 spec:
   secretStoreRef:
     name: onepassword
