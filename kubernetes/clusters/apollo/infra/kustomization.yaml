@@ -5,3 +5,4 @@ resources:
   - cnpg-operator.yaml
   - traefik.yaml
   - external-secrets.yaml
+  - external-secrets-secret-stores.yaml
