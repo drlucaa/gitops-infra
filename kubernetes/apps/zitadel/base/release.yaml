@@ -78,7 +78,18 @@ spec:
             - "auth.trai.ch"
           secretName: zitadel-tls
 
+    affinity:
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app.kubernetes.io/name: zitadel
+              topologyKey: kubernetes.io/hostname
+
     login:
+      replicaCount: 3
       ingress:
         enabled: true
         className: "traefik"
@@ -95,3 +106,12 @@ spec:
           - hosts:
               - "auth.trai.ch"
             secretName: zitadel-tls
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/name: zitadel-login
+                topologyKey: kubernetes.io/hostname
