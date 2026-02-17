@@ -6,3 +6,4 @@ resources:
   - traefik.yaml
   - external-secrets.yaml
   - cluster-secret-stores.yaml
+  - tofu-controller.yaml
