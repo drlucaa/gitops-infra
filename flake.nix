@@ -24,6 +24,7 @@
           packages = with pkgs; [
             kubectl
             kubectx
+            fluxcd
 
             opentofu
             fluxcd
