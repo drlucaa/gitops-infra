@@ -1,0 +1,8 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Backup
+metadata:
+  generateName: zitadel-db-backup-manual-
+  namespace: zitadel
+spec:
+  cluster:
+    name: zitadel-db
