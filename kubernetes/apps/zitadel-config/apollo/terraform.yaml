@@ -1,0 +1,25 @@
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
+kind: Terraform
+metadata:
+  name: zitadel-config
+  namespace: zitadel
+spec:
+  interval: 1h
+  approvePlan: "auto"
+  path: ./terraform/zitadel
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  serviceAccountName: tofu-runner
+  varsFrom:
+    - kind: Secret
+      name: iam-admin
+      varsKeys:
+        - iam-admin.json:jwt_profile
+    - kind: Secret
+      name: zitadel-smtp-secrets
+      varsKeys:
+        - host:smtp_host
+        - user:smtp_user
+        - password:smtp_password

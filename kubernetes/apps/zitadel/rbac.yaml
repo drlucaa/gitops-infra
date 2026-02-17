@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tofu-runner
+  namespace:
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: tofu-runner-min
+  namespace: zitadel
+rules:
+  # Permission to save the Terraform State file as a Secret
+  - resources: ["secrets"]
+    verbs: ["get", "list", "create", "update", "patch"]
+
+  # Permission to prevent two runners from working at once (Locking)
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["get", "list", "create", "update", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: tofu-runner-min-binding
+  namespace: zitadel
+subjects:
+  - kind: ServiceAccount
+    name: tofu-runner
+roleRef:
+  kind: Role
+  name: tofu-runner-min
+  apiGroup: rbac.authorization.k8s.io
