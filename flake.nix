@@ -28,14 +28,6 @@
             opentofu
             fluxcd
 
-            minio-client
-
-            sops
-            age
-
-            ansible
-            sshpass
-
             nixfmt-tree
             nixfmt
             nixd
