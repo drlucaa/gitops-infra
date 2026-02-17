@@ -69,6 +69,7 @@ token so the operator can talk to 1Password.
 - _Note: This is required for `cluster-secret-store.yaml` to function._
 
 ```bash
+kubectl create namespace flux-system
 kubectl -n flux-system create secret generic onepassword-secret \
   --from-literal=token=$(op read "op://apollo/onepassword-service-acoount/credential")
 ```
