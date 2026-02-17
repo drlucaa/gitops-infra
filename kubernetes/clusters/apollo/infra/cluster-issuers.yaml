@@ -1,11 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cert-manager-cluster-issuers
+  name: cluster-issuers
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./kubernetes/infra/cert-manager/cluster-issuers/apollo
+  path: ./kubernetes/infra/cluster-issuers/apollo
   prune: true
   wait: true
   sourceRef:

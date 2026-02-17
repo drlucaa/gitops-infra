@@ -1,8 +1,8 @@
 resources:
   - cert-manager.yaml
   - external-dns.yaml
-  - cert-manager-cluster-issuers.yaml
+  - cluster-issuers.yaml
   - cnpg-operator.yaml
   - traefik.yaml
   - external-secrets.yaml
-  - external-secrets-secret-stores.yaml
+  - cluster-secret-stores.yaml
