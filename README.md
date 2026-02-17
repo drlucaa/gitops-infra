@@ -66,23 +66,30 @@ token so the operator can talk to 1Password.
 
 1. **Create the 1Password Connect Token:**
 
-- _Note: This is required for `cluster-secret-store.yaml` to function._
+> [!IMPORTANT]
+> This is required for `cluster-secret-store.yaml` to function._
 
 ```bash
 kubectl create namespace flux-system
 kubectl -n flux-system create secret generic onepassword-secret \
-  --from-literal=token=$(op read "op://apollo/onepassword-service-acoount/credential")
+      --from-literal=token=$(op read "op://apollo/onepassword-service-acoount/credential")
 ```
 
 ### 2. Bootstrap Flux
 
 Initialize Flux on the cluster and link it to this repository.
 
+> [!IMPORTANT]
+> This step requires a GitHub access token with read and write permissions.
+
 ```bash
-flux bootstrap git \
-  --url=ssh://git@github.com/drlucaa/gitops-infra \
-  --branch=main \
-  --path=kubernetes/clusters/apollo \
+flux bootstrap github \
+      --token-auth=false \
+      --owner=drlucaa \
+      --repository=gitops-infra \
+      --branch=main \
+      --path=kubernetes/clusters/apollo \
+      --personal
 ```
 
 ### 3. Verification
