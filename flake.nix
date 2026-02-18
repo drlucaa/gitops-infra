@@ -24,7 +24,9 @@
           packages = with pkgs; [
             kubectl
             kubectx
-            fluxcd
+
+            crane
+            kubernetes-helm
 
             opentofu
             fluxcd
