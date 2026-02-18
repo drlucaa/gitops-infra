@@ -10,10 +10,25 @@ spec:
   primaryUpdateStrategy: unsupervised
   storage:
     size: 20Gi
+
   bootstrap:
-    initdb:
-      database: zitadel
-      owner: zitadel
+    recovery:
+      source: zitadel-db
+
+  externalClusters:
+    - name: zitadel-backup-source
+      barmanObjectStore:
+        serverName: zitadel-db
+        destinationPath: "s3://apollo/pg-backup/zitadel"
+        endpointURL: "https://1f77cbb9b7e656d1c77bb8ac97dca2e8.r2.cloudflarestorage.com"
+        s3Credentials:
+          accessKeyId:
+            name: zitadel-backup-credentials
+            key: ACCESS_KEY_ID
+          secretAccessKey:
+            name: zitadel-backup-credentials
+            key: ACCESS_SECRET_KEY
+
   backup:
     barmanObjectStore:
       destinationPath: "s3://apollo/pg-backup/zitadel"
