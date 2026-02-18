@@ -12,8 +12,11 @@ spec:
     size: 20Gi
 
   bootstrap:
-    recovery:
-      source: zitadel-backup-source
+    initdb:
+      database: zitadel
+      owner: zitadel
+    # recovery:
+    #   source: zitadel-backup-source
 
   externalClusters:
     - name: zitadel-backup-source
