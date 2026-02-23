@@ -14,3 +14,4 @@ spec:
         name: tofu-controller
         namespace: flux-system
   values:
+    allowCrossNamespaceRefs: true
