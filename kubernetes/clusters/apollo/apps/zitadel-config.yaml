@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./kubernetes/apps/zitadel/overlays/apollo
+  path: ./kubernetes/apps/zitadel-config/apollo
   prune: true
   wait: true
   timeout: 10m
