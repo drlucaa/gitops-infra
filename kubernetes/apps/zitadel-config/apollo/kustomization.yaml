@@ -1,0 +1,3 @@
+resources:
+  - terraform.yaml
+  - smtp-secrets.yaml
