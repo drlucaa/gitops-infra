@@ -13,7 +13,7 @@ rules:
   # Permission to save the Terraform State file as a Secret
   - apiGroups: [""]
     resources: ["secrets"]
-    verbs: ["get", "list", "create", "update", "patch"]
+    verbs: ["get", "list", "create", "update", "patch", "delete"]
 
   # Permission to prevent two runners from working at once (Locking)
   - apiGroups: ["coordination.k8s.io"]
