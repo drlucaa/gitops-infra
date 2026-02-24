@@ -11,7 +11,8 @@ metadata:
   namespace: zitadel
 rules:
   # Permission to save the Terraform State file as a Secret
-  - resources: ["secrets"]
+  - apiGroups: [""]
+    resources: ["secrets"]
     verbs: ["get", "list", "create", "update", "patch"]
 
   # Permission to prevent two runners from working at once (Locking)
