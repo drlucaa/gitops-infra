@@ -8,8 +8,7 @@ terraform {
 }
 
 provider "zitadel" {
-  domain   = "auth.trai.ch"
-  address  = "zitadel.zitadel.svc.cluster.local"
+  domain   = "zitadel.zitadel.svc.cluster.local"
   insecure = true
   port     = "8080"
 
