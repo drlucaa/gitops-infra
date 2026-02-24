@@ -9,8 +9,9 @@ terraform {
 
 provider "zitadel" {
   domain   = "auth.trai.ch"
-  insecure = false
-  port     = "443"
+  address  = "zitadel.zitadel.svc.cluster.local"
+  insecure = true
+  port     = "8080"
 
   jwt_profile_json = var.jwt_profile
 }
